@@ -76,7 +76,7 @@ function draw() {
   context.translate(x4,y4);
   context.rotate(angle4 * Math.PI/180)
   context.rect(-width4/2, -height4/2, radius4 * 2, radius4 * 2);
-  context.globalAlpha = opacity3;
+  context.globalAlpha = opacity4;
   context.fillStyle = 'purple';
   context.fill();
   context.lineWidth = 1;

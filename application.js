@@ -108,3 +108,9 @@ function animate1() {
   fade1();
 };
 
+function runIt1() {
+  selectRandCoords1();
+  resetRadius1();
+  determineOpacity1();
+  animate1();
+}

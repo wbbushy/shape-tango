@@ -20,6 +20,7 @@ var x1 = 90;
 var y1 = 90;
 var newX1 = 90;
 var newY1 = 90;
+var angle1 = 0;
 
 function draw() {
   context.clearRect(0, 0, canvas.width, canvas.height);
@@ -27,6 +28,7 @@ function draw() {
   context.save();
   context.beginPath();
   context.translate(x1,y1);
+  context.rotate(angle1 * Math.PI/180)
   context.rect(-width1/2, -height1/2, radius1 * 2, radius1 * 2);
   context.fillStyle = 'yellow';
   context.fill();
@@ -60,9 +62,16 @@ function plotCourse1() {
   };
 };
 
+function spin1() {
+  if (x1 != newX1) {
+  angle1 += 3;
+  };
+};
+
 function animate1() {
   requestAnimFrame(animate1);
   draw();
   plotCourse1();
+  spin1();
 };
 

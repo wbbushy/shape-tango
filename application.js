@@ -22,7 +22,10 @@ var newX1 = 90;
 var newY1 = 90;
 var angle1 = 0;
 var newRadius1;
+var opacity1 = 1;
+var newOpacity1;
 
+// draw function
 function draw() {
   context.clearRect(0, 0, canvas.width, canvas.height);
   // draw first square
@@ -31,6 +34,7 @@ function draw() {
   context.translate(x1,y1);
   context.rotate(angle1 * Math.PI/180)
   context.rect(-width1/2, -height1/2, radius1 * 2, radius1 * 2);
+  context.globalAlpha = opacity1;
   context.fillStyle = 'yellow';
   context.fill();
   context.lineWidth = 1;
@@ -82,11 +86,25 @@ function resize1() {
   };
 };
 
+function determineOpacity1() {
+  newOpacity1 = (newRadius1 - 15) / 50;
+};
+
+function fade1() {
+  if (opacity1 > newOpacity1) {
+    opacity1 -= 0.01;
+  };
+  if (newOpacity1 > opacity1) {
+    opacity1 += 0.01;
+  };
+};
+
 function animate1() {
   requestAnimFrame(animate1);
   draw();
   plotCourse1();
   spin1();
   resize1();
+  fade1();
 };
 

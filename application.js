@@ -21,6 +21,7 @@ var y1 = 90;
 var newX1 = 90;
 var newY1 = 90;
 var angle1 = 0;
+var newRadius1;
 
 function draw() {
   context.clearRect(0, 0, canvas.width, canvas.height);
@@ -66,6 +67,10 @@ function spin1() {
   if (x1 != newX1) {
   angle1 += 3;
   };
+};
+
+function resetRadius1() {
+  newRadius1 = Math.floor((Math.random() * 50) + 15);
 };
 
 function animate1() {

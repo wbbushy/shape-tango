@@ -1,3 +1,16 @@
+// requestAnimationFrame shim
+window.requestAnimFrame = (function(){
+  return  window.requestAnimationFrame       ||
+          window.webkitRequestAnimationFrame ||
+          window.mozRequestAnimationFrame    ||
+          window.oRequestAnimationFrame      ||
+          window.msRequestAnimationFrame     ||
+          function( callback ){
+            window.setTimeout(callback, 1000 / 60);
+          };
+})();
+
+
 // variables for first square
 
 var radius1 = 20;
@@ -16,4 +29,9 @@ function draw() {
   context.strokeStyle = 'black';
   context.stroke();
   context.restore();
+};
+
+function animate1() {
+  requestAnimFrame(animate1);
+  draw();
 };

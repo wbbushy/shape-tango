@@ -73,10 +73,20 @@ function resetRadius1() {
   newRadius1 = Math.floor((Math.random() * 50) + 15);
 };
 
+function resize1() {
+  if (radius1 < newRadius1) {
+    radius1 += 1;
+  };
+  if (radius1 > newRadius1) {
+    radius1 -= 1;
+  };
+};
+
 function animate1() {
   requestAnimFrame(animate1);
   draw();
   plotCourse1();
   spin1();
+  resize1();
 };
 

@@ -1,3 +1,18 @@
+$(document).ready(bindEvents);
+
+  function bindEvents() {
+    $('#tango').click(runItMaster);
+  };
+
+  function runItMaster() {
+    runIt1();
+    runIt2();
+    runIt3();
+    runIt4();
+    runIt5();
+    runIt6();
+  }
+
 // requestAnimationFrame shim
 window.requestAnimFrame = (function(){
   return  window.requestAnimationFrame       ||
